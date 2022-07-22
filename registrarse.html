@@ -2,10 +2,94 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-sacale=1.0, minimum-sacale=1.0">
-	<title>Responsiva</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registrarse</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<style>
+		.caja{
+			background: #f2f2f2f2;
+			font-family: 'Slabo 27px', serif;
+			font-size: 18px;
+			width: 80%;
+			margin: 40px;
+		}
+		.formulario, .caja-inputs{
+			padding: 20px;
+			background: gray;
+			border-radius: 6px 6px 0 0;
+		}
+		.formulario input[type="text"], .formulario input[type="correo"]{
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+			padding: 15px 10px;
+			border: none;
+			border-bottom: 5px solid #ccc;
+			font-family: 'Slabo 27px', serif;
+			font-size: 18px;
+		}
+		.formulario input[type="text"]:focus, .formulario input[type="correo"]:focus{
+			border-bottom: 5px solid #246eb9;
+		}
+		.formulario input[type="radio"]{
+			display: none;
+		}
+		.formulario .sexo{
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+		.formulario .sexo .hombre{
+			border-radius: 5px 0 0 5px;
+		}
+		.formulario .sexo .mujer{
+			border-radius: 0 5px 5px 0;
+		}
+		.formulario .label-radio{
+			background: rgba(249, 160, 63, .4);/*El .4 es una transparencia*/
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			width: 49%;
+		}
+
+		.formulario input[type="radio"]:checked + .label-radio{
+			background: #f9a03f;
+		}
+		.formulario .terminos{
+			text-align: center;
+			color: #424242;
+		}
+		.formulario .terminos label{
+			margin-left: 10px;
+		}
+		.formulario .error{
+			display: none; /*Se encarga de ocultar la sección de errores*/
+			margin-top: 20px;
+			border-radius: 3px;
+			background: #ce1818;
+			color: #fff;
+			padding: 15px 10px;
+			padding-left: 40px;
+		}
+		.formulario .btn{
+			width: 100%;
+			text-align: center;
+			background: #246eb9;
+			color: #fff;
+			border: none;
+			display: block;
+			padding: 15px 10px;
+			cursor: pointer;
+			border-radius: 0 0 6px 6px;
+			font-family: 'Slabo 27px', serif;
+			font-size: 18px;
+		}
+		.formulario .btn:hover{
+			background: #4357ad;
+		}
 	</style>
 </head>
 <body>
@@ -25,20 +109,27 @@
 				</nav>
 			</header>
 			<section class="main">
-				<div class="imagen">
-					<h2><i>Registrarse</i></h2>
+
+				<div class="caja">
+					<form action="" class="formulario" id="formulario" name="formulario">
+						<div class="caja-inputs">
+							<input type="text" name="nombre" placeholder="Nombre">
+							<input type="text" name="correo" placeholder="Correo">
+							<div class="sexo">
+								<input type="radio" name="sexo" id="hombre" value="Hombre">
+								<label class="label-radio hombre" for="hombre">Hombre</label>
+								<input type="radio" name="sexo" id="mujer" value="Mujer">
+								<label class="label-radio mujer" for="mujer">Mujer</label>
+							</div>
+							<div class="terminos">
+								<input type="checkbox" name="terminos" id="terminos">
+								<label for="terminos">Acepto los terminos y condiciones</label>
+							</div>
+							<ul class="error" id="error"></ul>
+						</div>
+						<input type="submit" class="btn" value="Registrarse">
+					</form>
 				</div>
-				<section class="post">
-					<article>
-						
-						<form action="">
-
-						</form>
-
-					</article>
-					
-				</section>
-
 			</section>
 			<aside>
 				<div class="lateral">
@@ -67,5 +158,6 @@
 			</footer>
 		</div>
 
+		<script src="js/acciones2.js"></script>
 	</body>
 </html>
